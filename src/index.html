@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Megaman Test - Vinch - v0.2</title>
+
+    <link href="../resources/css/megaman.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/game/util/constants.js"></script>
+    <script type="text/javascript" src="js/lib/preloadjs-NEXT.min.js"></script>
+    <script type="text/javascript" src="js/lib/easeljs-0.7.0.min.js"></script>
+    <script type="text/javascript" src="js/lib/soundjs-0.5.2.min.js"></script>
+    <script type="text/javascript" src="js/game/keyboard/menuKeyboardHandler.js"></script>
+    <script type="text/javascript" src="js/game/megaman/megaman.keyboardHandler.js"></script>
+    <script type="text/javascript" src="js/game/keyboard/multiplexKeyboardHandler.js"></script>
+    <script type="text/javascript" src="js/game/engine/collisionEngine.js"></script>
+    <script type="text/javascript" src="js/game/engine/movementEngine.js"></script>
+    <script type="text/javascript" src="js/game/engine/rendererEngine.js"></script>
+    <script type="text/javascript" src="js/game/engine/stateEngine.js"></script>
+    <script type="text/javascript" src="js/game/engine/weaponEngine.js"></script>
+    <script type="text/javascript" src="js/game/collision/collision.js"></script>
+
+    <script type="text/javascript" src="js/game/megaman/megaman.renderer.js"></script>
+    <script type="text/javascript" src="js/game/megaman/megaman.mobile.js"></script>
+    <script type="text/javascript" src="js/game/megaman/megaman.stateHandler.js"></script>
+    <script type="text/javascript" src="js/game/megaman/megaman.weaponHandler.js"></script>
+
+    <script type="text/javascript" src="js/game/level/backgroundItem.js"></script>
+    <script type="text/javascript" src="js/game/level/foregroundItem.js"></script>
+    <script type="text/javascript" src="js/game/level/bitmapItem.js"></script>
+    <script type="text/javascript" src="js/game/level/textItem.js"></script>
+    <script type="text/javascript" src="js/game/enemy/enemy1Item.js"></script>
+    <script type="text/javascript" src="js/game/enemy/boss1Item.js"></script>
+    <script type="text/javascript" src="js/game/enemy/boss1Item.inputGenerator.js"></script>
+    <script type="text/javascript" src="js/game/level/movableTextItem.js"></script>
+    <script type="text/javascript" src="js/game/level/screenBorderItem.js"></script>
+
+    <script type="text/javascript" src="js/game/weapon/bulletItem.js"></script>
+    <script type="text/javascript" src="js/game/collider/rectangularCollider.js"></script>
+    <script type="text/javascript" src="js/game/keyboard/input.js"></script>
+    <script type="text/javascript" src="js/game/weapon/pCannon.js"></script>
+    <script type="text/javascript" src="js/game/weapon/metalGear.js"></script>
+
+    <script type="text/javascript" src="js/game/megaman/megaman.js"></script>
+    <script type="text/javascript" src="js/game/level/introScreen.js"></script>
+    <script type="text/javascript" src="js/game/level/loadingScreen.js"></script>
+    <script type="text/javascript" src="js/game/level/stage1.js"></script>
+    <script type="text/javascript" src="js/game/stageContext.js"></script>
+    <!--
+       <script type="text/javascript" src="../ressources/js/utils/global.js"></script>
+       <script type="text/javascript" src="../ressources/js/utils/constants.js"></script>
+       <script type="text/javascript" src="../ressources/js/collider/collision/collisions.js"></script>
+       <script type="text/javascript" src="../ressources/js/collider/collisionHandler.js"></script>
+       <script type="text/javascript" src="../ressources/js/collider/groundCollider.js"></script>
+       <script type="text/javascript" src="../ressources/js/collider/heroCollider.js"></script>
+       <script type="text/javascript" src="../ressources/js/collider/plateformCollider.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/bulletItem.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/enemy.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/bulletItem.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/bulletFactory.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/weapon.js"></script>
+       <script type="text/javascript" src="../ressources/js/utils/helper.js"></script>
+       <script type="text/javascript" src="../ressources/js/stage/stage.js"></script>
+       <script type="text/javascript" src="../ressources/js/stage/weaponDefinitions.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/heroR.js"></script>
+       <script type="text/javascript" src="../ressources/js/animation/explosion.js"></script>
+       <script type="text/javascript" src="../ressources/js/game/bulletHandler.js"></script>
+       <script type="text/javascript" src="../ressources/js/game/keyboard.js"></script>
+
+   -->
+
+    <script type="text/javascript" src="js/game/game.js"></script>
+</head>
+<body onload="initGame();">
+
+<div id="loader" class="loader"></div>
+<header id="header" class="EaselJS">
+    <h1>MEGA MAN TEST</h1>
+</header>
+
+
+<div class="canvasHolder" align="center">
+    <canvas id="megaManCanvas" width="1696" height="800"></canvas>
+</div>
+
+</body>
+</html>
