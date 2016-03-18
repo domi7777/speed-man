@@ -22,7 +22,7 @@ console.log(gameItem instanceof Composable);
 console.log(gameItem.getLocatorList());
 */
 console.log("creating platform1");
-var platform1 = new MovingPlatform(150,200,100,20,5,10);
+var platform1 = new MovingPlatform(150,200,100,20,"platform",5,10);
 console.log("platform1 instanceof Platform : "+(platform1 instanceof Platform));
 console.log("platform1 instanceof GameItem : "+(platform1 instanceof GameItem));
 console.log("platform1 instanceof Composable : "+(platform1 instanceof Composable));
@@ -56,11 +56,17 @@ var cornerTopLeft = {
 }
 console.log(platformCollider.getX(cornerTopLeft));
 console.log(platformCollider.getY(cornerTopLeft));
-platform1.setX(50);
-platform1.setY(500);
+platformCollider.setX(50);
+platformCollider.setY(500);
 console.log(platformCollider.getX(cornerTopLeft));
 console.log(platformCollider.getY(cornerTopLeft));
 
+var renderer = platform1.getRendererList()[0];
+console.log(renderer);
+var visual = renderer.getVisualList()[0];
+console.log(visual);
+console.log(visual.getX(cornerTopLeft));
+console.log(visual.getY(cornerTopLeft));
 
 /*
 function Component1(){

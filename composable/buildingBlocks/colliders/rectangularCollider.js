@@ -5,11 +5,11 @@
 RectangularCollider.prototype = new Collider();
 RectangularCollider.prototype.constructor = RectangularCollider;
 
-function RectangularCollider (parent,x,y,w,h) {
+function RectangularCollider (parent,offsetX,offsetY,w,h) {
 
-    if (x != null && y != null && w != null && h != null ) {
+    if (offsetX != null && offsetY != null && w != null && h != null ) {
         console.log("RectangularCollider() with full params");
-        Collider.call(this, parent, x, y);
+        Collider.call(this, parent, offsetX, offsetY);
 
 
         var collider = this;

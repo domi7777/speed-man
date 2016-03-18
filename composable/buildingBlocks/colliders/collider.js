@@ -11,8 +11,8 @@ Collider.prototype.constructor = Collider;
 Collider.ComponentTypes = {
     LOCATOR:"Locator"
 }
-function Collider(parent,x,y) {
-    if (x != null && y != null) {
+function Collider(parent,offsetX,offsetY) {
+    if (offsetX != null && offsetY != null) {
         console.log("Collider() with full params");
         Composable.call(this);
 
@@ -28,7 +28,7 @@ function Collider(parent,x,y) {
 
         /*compose base gameItem*/
         collider
-            .addComponent(new OffsetLocator(collider, x, y,parent))
+            .addComponent(new OffsetLocator(collider, offsetX, offsetY, parent))
             .doWiring();
 
 

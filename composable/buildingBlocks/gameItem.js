@@ -6,7 +6,8 @@ GameItem.prototype = new Composable();
 GameItem.prototype.constructor = GameItem;
 GameItem.ComponentTypes = {
     LOCATOR:"Locator",
-    COLLIDER:"Collider"
+    COLLIDER:"Collider",
+    RENDERER:"Renderer"
 }
 function GameItem(x,y) {
     if (x != null && y != null ) {
@@ -19,6 +20,7 @@ function GameItem(x,y) {
 
         gameItem.addLocator = addLocator;
         gameItem.addCollider = addCollider;
+        gameItem.addRenderer = addRenderer;
 
 
         /*compose base gameItem*/
@@ -46,11 +48,19 @@ function GameItem(x,y) {
         }
 
         function addCollider(collider) {
-            console.log("yataa");
+
             var componentsForRole = componentRoleHelper.getComponentListForRole(GameItem.ComponentTypes.COLLIDER);
             componentRoleHelper.generateComponentListGetterForRole(GameItem.ComponentTypes.COLLIDER);
 
             componentsForRole.push(collider);
+        }
+
+        function addRenderer(renderer) {
+
+            var componentsForRole = componentRoleHelper.getComponentListForRole(GameItem.ComponentTypes.RENDERER);
+            componentRoleHelper.generateComponentListGetterForRole(GameItem.ComponentTypes.RENDERER);
+
+            componentsForRole.push(renderer);
         }
 
 

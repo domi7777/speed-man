@@ -23,6 +23,7 @@ RectangularZoneLocator.borderYTypes={
  * @constructor
  */
 function RectangularZoneLocator (parent,w,h,originLocator) {
+
     if (w != null && h != null){
         console.log("RectangularZoneLocator() with full params");
 
@@ -68,8 +69,7 @@ function RectangularZoneLocator (parent,w,h,originLocator) {
             if (calculationModes && calculationModes.borderXType){
                 borderType = calculationModes.borderXType;
             }
-
-            return originLocator.getX(calculationModes) + w*borderType/2;
+            return originLocator.getX(calculationModes) + borderType*w/2;
         }
         function setX(xParam,calculationModes){
             if (!originLocator){
@@ -92,7 +92,7 @@ function RectangularZoneLocator (parent,w,h,originLocator) {
                 borderType = calculationModes.borderXType;
             }
 
-            originLocator.setX(xParam - w*borderType/2,calculationModes);
+            originLocator.setX(xParam - borderType*w/2,calculationModes);
             return true;
         }
 

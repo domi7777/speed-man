@@ -5,10 +5,10 @@
 MovingPlatform.prototype = new Platform();
 MovingPlatform.prototype.constructor = MovingPlatform;
 
-function MovingPlatform (x,y,w,h,dx,dy) {
+function MovingPlatform (x,y,w,h,fileName,dx,dy) {
 
     if (x != null && y != null && w != null && h != null ) {
-        Platform.call(this, x, y,w,h);
+        Platform.call(this, x, y,w,h,fileName);
 
 
 
