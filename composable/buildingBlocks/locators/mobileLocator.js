@@ -30,6 +30,8 @@ function MobileLocator(parent,dx,dy,originLocator){
 
     mobile.getX = getX;
     mobile.getY = getY;
+    mobile.getNextX = getNextX;
+    mobile.getNextY = getNextY;
 
     mobile.getOriginLocator = getOriginLocator;
     mobile.setOriginLocator = setOriginLocator;
@@ -37,15 +39,21 @@ function MobileLocator(parent,dx,dy,originLocator){
     mobile.addToComposable = addToComposable;
     mobile.getMethodsToPullUp = getMethodsToPullUp;
 
-    function getDx() {
-        return dx;
+    function getDx(delta) {
+        if (!delta){
+            delta = 1;
+        }
+        return dx*delta;
     }
     function setDx(dxParam) {
         dx = dxParam;
     }
 
-    function getDy() {
-        return dy;
+    function getDy(delta) {
+        if (!delta){
+            delta = 1;
+        }
+        return dy*delta;
     }
     function setDy(dyParam) {
         dy = dyParam;
@@ -77,7 +85,17 @@ function MobileLocator(parent,dx,dy,originLocator){
             value = dx*movementCalculationType;
         }
 
+
         return originLocator.getX(calculationModes) + value;
+    }
+
+    function getNextX(delta){
+        var caclMode = {
+            movementCalculationXType : MobileLocator.movementCalculationXTypes.NEXT,
+            movementCalculationYType : MobileLocator.movementCalculationYTypes.NEXT,
+            delta : delta
+        }
+        return parent.getX(caclMode);
     }
 
     function getY(calculationModes){
@@ -108,6 +126,20 @@ function MobileLocator(parent,dx,dy,originLocator){
         return originLocator.getY(calculationModes) + value;
     }
 
+    function getNextY(delta){
+
+        var caclMode = {
+            movementCalculationXType : MobileLocator.movementCalculationXTypes.NEXT,
+            movementCalculationYType : MobileLocator.movementCalculationYTypes.NEXT,
+            borderXType : RectangularZoneLocator.borderXTypes.LEFT,
+            borderYType : RectangularZoneLocator.borderYTypes.TOP,
+            delta : delta
+        }
+
+
+        return parent.getY(caclMode);
+    }
+
 
     function getOriginLocator () {
         return originLocator;
@@ -133,7 +165,9 @@ function MobileLocator(parent,dx,dy,originLocator){
             "setDx",
             "setDy",
             "getX",
-            "getY"
+            "getY",
+            "getNextX",
+            "getNextY"
         ];
     }
 

@@ -20,6 +20,7 @@ function CollisionEngine() {
             for(var j =0 ; j < colliders.length; j++) {
                 if(i != j){
                     colliders[j].accept(colliders[i],delta);
+
                 }
             }
         }

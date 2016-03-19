@@ -12,8 +12,8 @@ Renderer.ComponentTypes = {
     LOCATOR:"Locator",
     VISUAL:"Visual"
 }
-function Renderer(parent,offsetX,offsetY) {
-    if (parent != null){
+function Renderer(gameItem,offsetX,offsetY) {
+    if (gameItem != null){
         console.log("Renderer() with full params");
         Composable.call(this);
 
@@ -31,7 +31,7 @@ function Renderer(parent,offsetX,offsetY) {
 
         /*compose base gameItem*/
         renderer
-            .addComponent(new OffsetLocator(renderer, offsetX, offsetY,parent))
+            .addComponent(new OffsetLocator(renderer, offsetX, offsetY,gameItem))
             .doWiring();
 
 
@@ -39,7 +39,7 @@ function Renderer(parent,offsetX,offsetY) {
             if(renderer.renderState){
                 renderer.renderState(delta);
             }
-
+/*
             var visuals = componentRoleHelper.getComponentListForRole(Renderer.ComponentTypes.VISUAL);
 
             for(var i= 0; i < visuals.length; i++){
@@ -47,6 +47,7 @@ function Renderer(parent,offsetX,offsetY) {
                     visuals[i].tick(delta);
                 }
             }
+            */
         }
 
         function addLocator(locator){

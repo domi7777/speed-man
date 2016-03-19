@@ -30,6 +30,8 @@ console.log("platform1.getLocatorList() : ");
 console.log(platform1.getLocatorList());
 console.log("platform1 : ");
 console.log(platform1);
+
+
 /*
  console.log("creating platform2");
  var platform2 = new Platform(400,400,200,20);
@@ -53,7 +55,7 @@ var cornerTopLeft = {
     movementCalculationXType : MobileLocator.movementCalculationXTypes.CURRENT,
     movementCalculationYType : MobileLocator.movementCalculationYTypes.CURRENT
 
-}
+};
 console.log(platformCollider.getX(cornerTopLeft));
 console.log(platformCollider.getY(cornerTopLeft));
 platformCollider.setX(50);

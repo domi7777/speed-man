@@ -50,9 +50,9 @@ function initGame() {
     multiplexHandler.register(menuHandler);
     multiplexHandler.register(megaman.getInputHandler());
 
-    var collisionEngine = new CollisionEngine();
+    var collisionEngine = new ComposableCollisionEngine();
     var movementEngine = new MovementEngine();
-    var rendererEngine = new RendererEngine();
+    var rendererEngine = new ComposableRendererEngine(canvas,loader);
     var stateEngine = new StateEngine();
     var weaponEngine = new WeaponEngine();
 
@@ -82,16 +82,15 @@ function initGame() {
         // Movement Engine Tick
         movementEngine.tick(event.delta/1000);
 
+        moveCanvas();
+
         // Renderer engine Tick
-        rendererEngine.tick(event.delta/1000);
+        rendererEngine.tick(event);
 
         // Weapon engine Tick
         weaponEngine.tick(event.delta/1000);
 
-        moveCanvas();
 
-        // Tick of game item
-        canvas.update(event);
     }
 
     function startStage() {

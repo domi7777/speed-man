@@ -20,6 +20,8 @@ function Visual(parent,offsetX,offsetY,fileName) {
         console.log("Visual() with full params");
         Composable.call(this);
 
+        console.log(offsetY);
+        console.log(parent.getY());
         var visual = this;
         var componentRoleHelper = new ComponentRoleHelper(visual);
         var active = true;
@@ -32,7 +34,7 @@ function Visual(parent,offsetX,offsetY,fileName) {
         visual.isActive = isActive;
         visual.setActive = setActive;
         visual.isDisplayed = isDisplayed;
-        visual.setdisplayed = setDisplayed;
+        visual.setDisplayed = setDisplayed;
         visual.getFileName = getFileName;
 
 

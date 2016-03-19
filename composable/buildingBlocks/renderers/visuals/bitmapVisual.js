@@ -12,8 +12,12 @@ function BitmapVisual (parent,offsetX,offsetY,fileName,w,h) {
         Visual.call(this, parent, offsetX, offsetY,fileName);
 
         var visual= this;
-
         visual.addComponent(new RectangularZoneLocator(visual, w,h)).doWiring();
+
+        console.log(visual.getY({
+            borderXType : RectangularZoneLocator.borderXTypes.LEFT,
+            borderYType : RectangularZoneLocator.borderYTypes.TOP
+        }));
 
         visual.getGraphicalElement = getGraphicalElement;
         visual.tick = tick;
@@ -27,8 +31,12 @@ function BitmapVisual (parent,offsetX,offsetY,fileName,w,h) {
                     borderXType : RectangularZoneLocator.borderXTypes.LEFT,
                     borderYType : RectangularZoneLocator.borderYTypes.TOP
                 }
+
                 shape.x = visual.getX(cornerTopLeft);
                 shape.y = visual.getY(cornerTopLeft);
+
+
+
             }
         }
 
@@ -42,7 +50,8 @@ function BitmapVisual (parent,offsetX,offsetY,fileName,w,h) {
                 shape = new createjs.Shape();
                 var groundImg = loader.getResult(fileName);
 
-                shape.graphics.beginBitmapFill(groundImg).drawRect(visual.getX(cornerTopLeft), visual.getY(cornerTopLeft), w, h);
+                console.log(visual.getY(cornerTopLeft));
+                shape.graphics.beginBitmapFill(groundImg).drawRect(0, 0, w, h);
             }
 
             return shape;

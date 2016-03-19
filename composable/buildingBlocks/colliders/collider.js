@@ -6,14 +6,14 @@
  * Created by nd on 7/03/2016.
  */
 
-Collider.prototype = new Composable();
-Collider.prototype.constructor = Collider;
-Collider.ComponentTypes = {
+ComposableCollider.prototype = new Composable();
+ComposableCollider.prototype.constructor = ComposableCollider;
+ComposableCollider.ComponentTypes = {
     LOCATOR:"Locator"
 }
-function Collider(parent,offsetX,offsetY) {
+function ComposableCollider(gameItem,offsetX,offsetY) {
     if (offsetX != null && offsetY != null) {
-        console.log("Collider() with full params");
+        console.log("ComposableCollider() with full params");
         Composable.call(this);
 
         var collider = this;
@@ -24,12 +24,22 @@ function Collider(parent,offsetX,offsetY) {
 
         collider.addLocator = addLocator;
 
+        collider.canCollide = canCollide;
+
 
 
         /*compose base gameItem*/
         collider
-            .addComponent(new OffsetLocator(collider, offsetX, offsetY, parent))
+            .addComponent(new OffsetLocator(collider, offsetX, offsetY, gameItem))
+            // ugly fix to use both old code and new code
+            .addComponent(new MobileLocator(collider,0,0))
             .doWiring();
+
+
+        function canCollide(secondGameItem){
+            //TODO : change the name of the gameItem.canCollide to gameItem.canBeCollidedBy
+            return secondGameItem.canCollide(gameItem)
+        }
 
 
         function addLocator(locator){

@@ -13,11 +13,14 @@ function Platform (x,y,w,h,fileName) {
 
 
         var platform = this;
-        var collider = new RectangularCollider(platform,0,0,w,h);
 
 
-        var renderer = new Renderer(platform);
-        renderer.addComponent(new BitmapVisual(renderer,0,0,fileName,w,h))
+        var collider = new ComposableRectangularCollider(platform,0,0,w,h);
+
+
+
+        var renderer = new Renderer(platform,0,0);
+        renderer.addComponent(new BitmapVisual(renderer,0,0,fileName,w,h)).doWiring();
 
 
         platform
@@ -26,5 +29,16 @@ function Platform (x,y,w,h,fileName) {
             .doWiring();
 
 
+        console.log(platform);
+
+
+        platform.canCollide = canCollide;
+
+        function canCollide(secondGameitem){
+            if (secondGameitem.canCollideForegroundItem){
+                return secondGameitem.canCollideForegroundItem(platform);
+            }
+            return false;
+        }
     }
 }

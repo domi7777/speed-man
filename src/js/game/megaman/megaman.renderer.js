@@ -51,6 +51,7 @@ function MegamanRenderer(megaman){
             return sprite;
     }
     function tick(delta){
+
         sprite.scaleX = (megaman.getMove() != 0 ? megaman.getMove() :  sprite.scaleX);
         sprite.x = x + ((sprite.scaleX) < 0 ? w : 0);
         sprite.y = y;
@@ -97,10 +98,15 @@ function MegamanRenderer(megaman){
 
 
     function setX(newX){
+
         x=newX-20;
     }
 
     function setY(newY){
+        //if (newY<600){
+        //    console.log("megaman.renderer.setY");
+        //    console.log(newY);
+        //}
         y=newY;
     }
 
