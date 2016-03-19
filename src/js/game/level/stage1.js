@@ -42,7 +42,7 @@ function Stage1(stageContext){
         // Set megaman position (default 0,0 for test)
         stageContext.initMegaman(100,100);
 
-/*
+
         // Create wall
         var wall = new ForegroundItem(0,0, 50,  stageContext.getCanvasHeight()-200,"ground","wall");
         stageContext.addGameItem(wall,"platform");
@@ -50,7 +50,7 @@ function Stage1(stageContext){
         // Create wall2
         var wall2 = new ForegroundItem(0,stageContext.getCanvasHeight()-100, 50,  stageContext.getCanvasHeight()-100,"ground","wall");
         stageContext.addGameItem(wall2,"platform");
-*/
+
         // Create ground
         var ground = new ForegroundItem(0, stageContext.getCanvasHeight()-80, stageContext.getCanvasWidth()+100, 16*5,"ground","ground");
         stageContext.addGameItem(ground,"platform");
@@ -65,7 +65,7 @@ function Stage1(stageContext){
 
 
 
-/*
+
         // Create Plateform
         var palteform4 = new ForegroundItem(2000, stageContext.getCanvasHeight()-300, 16*10, 16*3,"ground","palteform4");
         stageContext.addGameItem(palteform4,"platform");
@@ -116,7 +116,7 @@ function Stage1(stageContext){
         stageContext.addGameItem(bossGate,"platform");
 
         // Create enemy
-//        var enemy1 = new StaticEnemy1Item(1000, stageContext.getCanvasHeight()-230,171, 150,"enemy1","enemy1",stageContext);
+  //      var enemy1 = new StaticEnemy1Item(1000, stageContext.getCanvasHeight()-230,171, 150,"enemy1","enemy1",stageContext);
 //        stageContext.addGameItem(enemy1);
 
         // Create enemy2
@@ -132,7 +132,7 @@ function Stage1(stageContext){
         stageContext.addGameItem(enemy6,"enemy");
         // Create first boss
         var boss = new Boss1Item(1000, stageContext.getCanvasHeight()-400,79, 100,"boss1","boss1",stageContext);
- //       stageContext.addGameItem(boss,"enemy");
+       stageContext.addGameItem(boss,"enemy");
 
         var screenBorderBottom = new ScreenBorderItem(-1,stageContext.getCanvasHeight(), stageContext.getCanvasWidth()*16, 1);
         var screenBorderTop = new ScreenBorderItem(-1,-1, stageContext.getCanvasWidth(), 1);
@@ -144,7 +144,7 @@ function Stage1(stageContext){
         stageContext.addGameItem(screenBorderBottom,"border");
         stageContext.addGameItem(screenBorderRight,"border");
         stageContext.addGameItem(screenBorderLeft,"border");
-*/
+
 
     }
 

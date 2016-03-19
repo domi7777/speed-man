@@ -452,7 +452,7 @@ function Boss1Item(x,y,w,h,sheetName,name,stageContext) {
                     currentWeapon.getBulletData(),
                     stageContext
                 );
-                stageContext.addGameItem(bullet);
+                stageContext.addGameItem(bullet,"enemy");
             }
         }
 
