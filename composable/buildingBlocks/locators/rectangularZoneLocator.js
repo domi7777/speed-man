@@ -25,7 +25,7 @@ RectangularZoneLocator.borderYTypes={
 function RectangularZoneLocator (parent,w,h,originLocator) {
 
     if (w != null && h != null){
-        console.log("RectangularZoneLocator() with full params");
+
 
         var zone = this;
 

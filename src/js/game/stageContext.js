@@ -55,6 +55,8 @@ function StageContext(loader, canvasG, collisionEngine,movementEngine,rendererEn
         }
 
         if (gameItem.getCollider) {
+
+
             var collider = gameItem.getCollider();
             collisionEngine.register(collider,group);
         }
@@ -63,7 +65,7 @@ function StageContext(loader, canvasG, collisionEngine,movementEngine,rendererEn
         if (gameItem.getColliderList) {
             var colliders = gameItem.getColliderList();
             for(var j=0;j<colliders.length;j++){
-                console.log(colliders[j]);
+
                 collisionEngine.register(colliders[j],group);
 
             }

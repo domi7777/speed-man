@@ -8,7 +8,7 @@ Platform.prototype.constructor = Platform;
 function Platform (x,y,w,h,fileName) {
 
     if (x != null && y != null && w != null && h != null) {
-        console.log("Platform() with full params");
+
         GameItem.call(this, x, y);
 
 
@@ -29,7 +29,7 @@ function Platform (x,y,w,h,fileName) {
             .doWiring();
 
 
-        console.log(platform);
+
 
 
         platform.canCollide = canCollide;

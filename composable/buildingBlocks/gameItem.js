@@ -49,7 +49,7 @@ function GameItem(x,y) {
 
         function addCollider(collider) {
 
-            console.log("gameItem.addCollider");
+
             var componentsForRole = componentRoleHelper.getComponentListForRole(GameItem.ComponentTypes.COLLIDER);
             componentRoleHelper.generateComponentListGetterForRole(GameItem.ComponentTypes.COLLIDER);
 

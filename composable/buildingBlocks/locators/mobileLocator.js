@@ -93,6 +93,8 @@ function MobileLocator(parent,dx,dy,originLocator){
         var caclMode = {
             movementCalculationXType : MobileLocator.movementCalculationXTypes.NEXT,
             movementCalculationYType : MobileLocator.movementCalculationYTypes.NEXT,
+            borderXType : RectangularZoneLocator.borderXTypes.LEFT,
+            borderYType : RectangularZoneLocator.borderYTypes.TOP,
             delta : delta
         }
         return parent.getX(caclMode);

@@ -14,7 +14,7 @@ Renderer.ComponentTypes = {
 }
 function Renderer(gameItem,offsetX,offsetY) {
     if (gameItem != null){
-        console.log("Renderer() with full params");
+
         Composable.call(this);
 
         var renderer = this;
@@ -39,15 +39,7 @@ function Renderer(gameItem,offsetX,offsetY) {
             if(renderer.renderState){
                 renderer.renderState(delta);
             }
-/*
-            var visuals = componentRoleHelper.getComponentListForRole(Renderer.ComponentTypes.VISUAL);
 
-            for(var i= 0; i < visuals.length; i++){
-                if (visuals[i].tick){
-                    visuals[i].tick(delta);
-                }
-            }
-            */
         }
 
         function addLocator(locator){
@@ -63,16 +55,12 @@ function Renderer(gameItem,offsetX,offsetY) {
         }
 
         function addVisual(visual){
-            console.log("yata");
+
             var componentsForRole = componentRoleHelper.getComponentListForRole(Renderer.ComponentTypes.VISUAL);
             componentRoleHelper.generateComponentListGetterForRole(Renderer.ComponentTypes.VISUAL);
 
             componentsForRole.push(visual);
         }
-
-
-
-
 
         function addToComposable(composable){
             if (composable.addRenderer){

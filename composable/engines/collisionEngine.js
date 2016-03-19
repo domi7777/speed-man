@@ -13,10 +13,11 @@ function ComposableCollisionEngine() {
             group = collider.getCollisionGroup();
         }
 
-        if (!collider[group]){
+        if (!colliders[group]){
             colliders[group] = [];
         }
         colliders[group][colliders[group].length] = collider;
+
     }
 
     function unRegister(collider){
@@ -44,7 +45,7 @@ function ComposableCollisionEngine() {
                         for(var j =0 ; j < colliders[groupB].length; j++) {
 
                             colliders[groupB][j].accept(colliders[groupA][i],delta);
-                            //colliders[groupA][i].accept(colliders[groupB][j],delta);
+
                         }
                     }
                 }

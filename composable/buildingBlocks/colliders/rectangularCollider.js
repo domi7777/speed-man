@@ -8,7 +8,7 @@ ComposableRectangularCollider.prototype.constructor = ComposableRectangularColli
 function ComposableRectangularCollider (gameItem,offsetX,offsetY,w,h) {
 
     if (offsetX != null && offsetY != null && w != null && h != null ) {
-        console.log("ComposableRectangularCollider() with full params");
+
         ComposableCollider.call(this, gameItem, offsetX, offsetY);
 
 

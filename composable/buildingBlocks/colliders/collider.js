@@ -13,7 +13,7 @@ ComposableCollider.ComponentTypes = {
 }
 function ComposableCollider(gameItem,offsetX,offsetY) {
     if (offsetX != null && offsetY != null) {
-        console.log("ComposableCollider() with full params");
+
         Composable.call(this);
 
         var collider = this;

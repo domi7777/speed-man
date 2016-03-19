@@ -79,7 +79,7 @@ function MegamanStateHandler(megaman){
 
             enterState:function (){
                 // TODO Treat this stuff correctly
-                console.log("ENTERING STANDING");
+             //   console.log("ENTERING STANDING");
                 switchAnimation=true;
                 currentState = states.STANDING;
 
@@ -126,7 +126,7 @@ function MegamanStateHandler(megaman){
 
             enterState:function (){
                 // TODO Treat this stuff correctly
-                console.log("ENTERING MOVING");
+               // console.log("ENTERING MOVING");
                 switchAnimation=true;
                 currentState = states.MOVING;
 
@@ -173,7 +173,7 @@ function MegamanStateHandler(megaman){
 
             enterState: function () {
                 // TODO Treat this stuff correctly
-                console.log("ENTERING FALLING");
+               // console.log("ENTERING FALLING");
                 switchAnimation = true;
                 currentState = states.FALLING;
             },
@@ -209,7 +209,7 @@ function MegamanStateHandler(megaman){
 
             enterState:function (){
                 // TODO Treat this stuff correctly
-                console.log("ENTERING JUMPING");
+               // console.log("ENTERING JUMPING");
                 switchAnimation=true;
                 currentState = states.JUMPING;
                 megaman.setDy(-1600)

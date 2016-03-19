@@ -7,6 +7,7 @@ function CollisionEngine() {
     var colliders =[] ;
 
     function register(collider){
+        console.log(collider);
         colliders[colliders.length] = collider;
     }
 

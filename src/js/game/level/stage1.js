@@ -55,24 +55,12 @@ function Stage1(stageContext){
         var ground = new ForegroundItem(0, stageContext.getCanvasHeight()-80, stageContext.getCanvasWidth()+100, 16*5,"ground","ground");
         stageContext.addGameItem(ground,"platform");
 
-        console.log(ground.getY());
+
 
 
         // Create Plateform
         var composablePalteform = new MovingPlatform(100, stageContext.getCanvasHeight()-280, 16*10, 16*3,"ground",0,0);
         stageContext.addGameItem(composablePalteform,"platform");
-        var colliders = composablePalteform.getColliderList();
-        console.log(stageContext.getCanvasHeight()-600);
-        var cornerTopLeft = {
-            borderXType : RectangularZoneLocator.borderXTypes.LEFT,
-            borderYType : RectangularZoneLocator.borderYTypes.TOP,
-            movementCalculationXType : MobileLocator.movementCalculationXTypes.CURRENT,
-            movementCalculationYType : MobileLocator.movementCalculationYTypes.CURRENT
-
-        }
-        console.log(colliders[0].getY());
-        console.log(colliders[0].getY(cornerTopLeft));
-        console.log(colliders[0].getNextY(1));
 
 
 

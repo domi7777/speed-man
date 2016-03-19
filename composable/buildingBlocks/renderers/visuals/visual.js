@@ -17,11 +17,10 @@ Visual.ComponentTypes = {
 }
 function Visual(parent,offsetX,offsetY,fileName) {
     if (offsetX != null && offsetY != null) {
-        console.log("Visual() with full params");
+
         Composable.call(this);
 
-        console.log(offsetY);
-        console.log(parent.getY());
+
         var visual = this;
         var componentRoleHelper = new ComponentRoleHelper(visual);
         var active = true;

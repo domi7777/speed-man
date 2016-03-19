@@ -38,7 +38,7 @@ function RectangularCollider(gameItem){
     }
 
     function getY(calcmodes) {
-        return gameItem.getY(calcmodess);
+        return gameItem.getY(calcmodes);
     }
 
     function getDx(delta) {
