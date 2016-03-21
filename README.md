@@ -1,6 +1,6 @@
 # speed-man
 
-[![Build Status](https://travis-ci.org/domi7777/speed-man.svg?branch=master)](https://travis-ci.org/domi7777/speed-man)
+[![Build Status](https://travis-ci.org/Thundix/speed-man.svg?branch=master)](https://travis-ci.org/Thundix/speed-man)
 
 todo:
 
