@@ -8,5 +8,3 @@ todo:
 - boss
 - lvls
 - todo list :-)
-
-(link to gh-pages: http://domi7777.github.io/speed-man/)
