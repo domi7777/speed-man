@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Cross domain communication with popup</title>
+    
+  </head>
+  <body>
+    <h3>Cross domain communication - target</h3>
+    
+    <script>
+    
+    
+   function output(message){
+      document.body.innerHTML = document.body.innerHTML + "<p>"+message+"</p>";
+    }
+    
+    
+       window.addEventListener('message', function (event) {
+         output("received cartId:"+event.data);
+         localStorage.setItem('cartId',event.data);
+         
+       });
+       
+       output("last cartId:"+localStorage.getItem('cartId'));
+    </script>
+    
+  </body>
+</html>
