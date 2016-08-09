@@ -1,29 +1,25 @@
 <html>
   <head>
-    <title>Cross domain communication with popup</title>
+    <title>Cross domain communication with cookies</title>
     
   </head>
   <body>
-    <h3>Cross domain communication - target</h3>
+    <h3>Cross domain communication - cookies</h3>
     
     <script>
-    
-    function output(message){
-      document.body.innerHTML = document.body.innerHTML + "<p>"+message+"</p>";
-    }
-    var lastCartId = localStorage.getItem('cartId');
-     output("last cartId:"+ lastCartId);
- 
-     window.opener.postMessage('hey, I\'m ready, previous cartId was:'+lastCartId,'*')
-      
-     window.addEventListener('message', function (event) {
-       output("received cartId:"+event.data);
-       localStorage.setItem('cartId',event.data);
-       //window.close();
-     });
-       
-      
+      window.addEventListener("message", receiveMessage, false);
+
+      function receiveMessage(event){
+        if(event.data == 'post') {
+          console.log(event);
+          document.cookie = "username=John Doe; expires=Thu, 18 Dec 2020 12:00:00 UTC; path=/";
+          var x = document.cookie;
+          alert("cookie set: " + x);
+        } else if(event.data == 'get') {
+          var x = document.cookie;
+          parent.postMessage(JSON.stringify(x), '*');
+        }
+      }
     </script>
-    
   </body>
 </html>
